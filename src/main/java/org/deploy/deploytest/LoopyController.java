@@ -14,10 +14,7 @@ public class LoopyController {
 
     @Value("${server.env}")
     private String env;
-    @Value("${server.port}")
-    private String serverPort;
-    @Value("${server.serverAddress}")
-    private String serverAddress;
+
     @Value("${serverName}")
     private String serverName;
 
@@ -26,8 +23,6 @@ public class LoopyController {
 
         Map<String, String> responseData = new TreeMap<>();
         responseData.put("serverName", serverName);
-        responseData.put("serverPort", serverPort);
-        responseData.put("serverAddress", serverAddress);
         responseData.put("env", env);
 
         return ResponseEntity.ok(responseData);
