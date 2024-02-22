@@ -22,7 +22,7 @@ public class LoopyController {
     public ResponseEntity<?> loopy() {
 
         Map<String, String> responseData = new TreeMap<>();
-        responseData.put("serverName", serverName);
+        responseData.put("serverName", serverName); 
         responseData.put("env", env);  
 
         return ResponseEntity.ok(responseData);
