@@ -13,7 +13,7 @@ import java.util.TreeMap;
 public class LoopyController {
 
     @Value("${server.env}")
-    private String env;
+    private String env; 
 
     @Value("${serverName}")
     private String serverName;
