@@ -45,7 +45,7 @@ jobs:
         run: |
           STATUS=$(curl -o /dev/null -w "%{http_code}" "https://${{ secrets.LIVE_SERVER_IP }}/env")
           echo $STATUS
-          if [ $STATUS = 301 ]; then
+          if [ $STATUS = 200 ]; then
             CURRENT_UPSTREAM=$(curl -s "https://${{ secrets.LIVE_SERVER_IP }}/env")
           else
             CURRENT_UPSTREAM=green
@@ -75,7 +75,7 @@ jobs:
       - name: Check deploy server URL
         uses: jtalk/url-health-check-action@v3
         with:
-          url: https://${{ secrets.LIVE_SERVER_IP }}:${{env.STOPPED_PORT}}/env
+          url: https://${{ secrets.LIVE_SERVER_IP }}/env
           max-attempts: 5
           retry-delay: 10s
 
