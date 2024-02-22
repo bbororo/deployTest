@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 @RestController
-public class LoopyController {
+public class LoopyController { 
 
     @Value("${server.env}")
     private String env; 
